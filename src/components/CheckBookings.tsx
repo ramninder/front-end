@@ -8,8 +8,9 @@ import {
     TableBody,
     makeStyles,
   } from "@material-ui/core";
-import { Booking } from './models/Booking';
+import { Booking } from '../models/Booking';
 import { viewAllBookings } from '../remote/createbookings';
+import { Users } from '../models/Users';
 
 
   const useStyles = makeStyles({
@@ -36,7 +37,13 @@ import { viewAllBookings } from '../remote/createbookings';
   });
 
 
-export const CheckBookings: React.FunctionComponent = ()=>{
+  interface ICustomerRegisterProps {
+    updateCurrentUser: (u: Users) => void;
+    currentUser: Users;
+  }
+
+
+export const CheckBookings: React.FunctionComponent<ICustomerRegisterProps> = ()=>{
     const classes = useStyles();
 
 

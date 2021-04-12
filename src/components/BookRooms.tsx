@@ -3,10 +3,16 @@ import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { createNewBooking } from '../remote/createbookings';
+import { Users } from '../models/Users';
 
 
+interface ICustomerRegisterProps {
+  updateCurrentUser: (u: Users) => void;
+  currentUser: Users;
+}
 
-export const BookRooms: React.FunctionComponent = ()=>{
+
+export const BookRooms: React.FunctionComponent<ICustomerRegisterProps> = ()=>{
     
     let history = useHistory();
 
